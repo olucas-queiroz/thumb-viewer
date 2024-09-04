@@ -11,18 +11,30 @@
         box-sizing: border-box;
         overflow: hidden;
       }
+
+      header {
+        display: flex;
+        justify-content: center;
+      }
+
       body {
         background: #000;
         color: #fff;
         font-family: "Space Grotesk";
+        margin: 0 auto;
+      }
+
+      section {
+        max-width: 800px;
         height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
+        /* background-color: red; */
+        flex-direction: column;
+        margin: 0 auto;
       }
-      section {
-        max-width: 800px;
-      }
+
       .titulo {
         text-align: center;
         margin-bottom: 20px;
@@ -47,12 +59,25 @@
     </style>
   </head>
   <body>
+    <header>
+      <h1 onclick="interruptor('#fff', '#000')" id="luz">Sun</h1>
+      <h1 onclick="interruptor('#000', '#fff')" id="lua">Moon</h1>
+    </header>
     <section>
       <h1 class="titulo">Instagram - Reels</h1>
       <picture>
         <img src="thumb.png" alt="" class="plataforma" />
       </picture>
     </section>
-    <script></script>
+    <script>
+      var body = document.body;
+      var luz = document.getElementById("luz");
+      var lua = document.getElementById("lua");
+
+      function interruptor(cor, cor2) {
+        body.style.background = cor;
+        body.style.color = cor2;
+      }
+    </script>
   </body>
 </html>
